@@ -23,8 +23,9 @@ void func()
 }
 
 
+
 int main() {
-    constexpr int NUM_LOOPS = 2;
+    constexpr int NUM_LOOPS = 2;           // CHANGE THIS TO 1 ... AND IT WILL NOT FAIL (WHY DOES IT FAIL WITH 2 ??)
     for (int i = 0; i < NUM_LOOPS; ++i) {
         py::scoped_interpreter inter;
         {
