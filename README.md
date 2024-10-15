@@ -5,7 +5,7 @@ mkdir build/
 cd    build/
 cmake ..              # will clone https://github.com/pybind/pybind11.git (stable)
 cmake --build . -j    # will also copy mysum.py into the build/ directory
-./go                  # run
+./go                  # run (need a python with numpy)
 ```
 
 The result is:
