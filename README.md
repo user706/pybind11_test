@@ -3,7 +3,7 @@
 ```bash
 mkdir build/
 cd    build/
-cmake ..
+cmake ..              # will clone https://github.com/pybind/pybind11.git (stable)
 cmake --build . -j    # will also copy mysum.py into the build/ directory
 ./go                  # run
 ```
