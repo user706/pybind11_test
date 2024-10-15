@@ -16,7 +16,9 @@ double free or corruption (out)
 Aborted (core dumped)
 ```
 
-However if I simply change the following line  
+It fails in [this line](https://github.com/user706/pybind11_test/blob/79c26f576ece40db9b306a5019add50c89e6dace/main.cpp#L32), but only the 2nd time through the loop!!!
+
+So if I simply change the following line  
  [`constexpr int NUM_LOOPS = 2;`](main.cpp#L28)  
  to this  
  `constexpr int NUM_LOOPS = 1;`  
