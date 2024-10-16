@@ -19,7 +19,10 @@ FetchContent_MakeAvailable(pybind11)
 add_executable(go main.cpp)
 target_link_libraries(go PRIVATE pybind11::embed)
 
-add_custom_command(TARGET go POST_BUILD
+add_custom_command(OUTPUT ${CMAKE_BINARY_DIR}/mysum.py
     COMMAND ${CMAKE_COMMAND} -E copy mysum.py ${CMAKE_BINARY_DIR}
+    DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/mysum.py
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
+
+add_custom_target(copy_mysum_py ALL DEPENDS ${CMAKE_BINARY_DIR}/mysum.py)
