@@ -1,5 +1,14 @@
 # pybind11_test
 
+* Fails only with numpy and `py::array_t` and "single" `py::scoped_interpreter`  
+ (~> branch `main`)
+* Does not fail, when having only single `py::scoped_interpreter`  
+ (~> branch `works_when_having_only_single_scoped_interpreter` -> see [diff](https://github.com/user706/pybind11_test/compare/main...works_when_having_only_single_scoped_interpreter)): why?
+* Does not fail, when changing to `py::list`  
+ (~> branch `works_when_removing_numpy` -> see [diff](https://github.com/user706/pybind11_test/compare/main...works_when_removing_numpy)): why?
+
+## Build and run
+
 ```bash
 mkdir build/
 cd    build/
