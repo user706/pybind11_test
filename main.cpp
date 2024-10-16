@@ -26,8 +26,8 @@ void func()
 
 int main() {
     constexpr int NUM_LOOPS = 2;           // CHANGE THIS TO 1 ... AND IT WILL NOT FAIL (WHY DOES IT FAIL WITH 2 ??)
+    py::scoped_interpreter inter;
     for (int i = 0; i < NUM_LOOPS; ++i) {
-        py::scoped_interpreter inter;
         {
             py::object imported = py::module::import("mysum");
             my_sum = new py::object(imported.attr("my_sum"));
