@@ -1,6 +1,6 @@
 #include <iostream>
 #include <pybind11/embed.h> // everything needed for embedding
-#include <pybind11/numpy.h>
+#include <pybind11/stl.h>
 #include <vector>
 #include <thread>
 
@@ -18,7 +18,7 @@ void func()
     vec[0] = 10;
     vec[1] = 5;
     
-    py::array_t<int16_t, py::array::c_style> arr(vec.size(), vec.data());
+    py::list arr = py::cast(vec);
     std::cout << "Sum is: " << (*my_sum)(arr).cast<int64_t>() << std::endl;
 }
 
